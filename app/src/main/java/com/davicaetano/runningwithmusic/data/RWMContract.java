@@ -21,6 +21,6 @@ public class RWMContract {
         public static final String COLUMN_ARTIST = "artist";
         public static final String COLUMN_SONG_NAME = "song_name";
         public static final String COLUMN_ALBUM_NAME = "album_name";
-        
+
     }
 }
