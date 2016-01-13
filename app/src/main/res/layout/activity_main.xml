@@ -21,6 +21,7 @@
             android:orientation="vertical">
 
             <android.support.v7.widget.CardView
+                android:id="@+id/card_new_run"
                 android:layout_width="match_parent"
                 android:layout_margin="20dp"
                 android:layout_height="match_parent"
@@ -44,13 +45,14 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Start New Run"
+                            android:text="@string/new_session"
                             android:textSize="26sp"/>
                     </LinearLayout>
                 </LinearLayout>
             </android.support.v7.widget.CardView>
 
             <android.support.v7.widget.CardView
+                android:id="@+id/card_history"
                 android:layout_width="match_parent"
                 android:layout_margin="20dp"
                 android:layout_height="match_parent"
@@ -74,40 +76,12 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Running History"
+                            android:text="@string/history"
                             android:textSize="26sp"/>
                     </LinearLayout>
                 </LinearLayout>
             </android.support.v7.widget.CardView>
-            <android.support.v7.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_margin="20dp"
-                android:layout_height="match_parent"
-                android:layout_gravity="center_horizontal">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <ImageButton
-                        android:padding="10dp"
-                        android:layout_width="60dp"
-                        android:layout_height="80dp"
-                        android:scaleType="fitCenter"
-                        android:src="@drawable/antena_radio"
-                        android:background="@android:color/transparent"/>
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:gravity="center_horizontal">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="GPS - Wifi"
-                            android:textSize="26sp"/>
-                    </LinearLayout>
-                </LinearLayout>
-            </android.support.v7.widget.CardView>
+
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
 
@@ -142,6 +116,9 @@
                     android:scaleType="centerCrop"/>
             </FrameLayout>
         </android.support.design.widget.CollapsingToolbarLayout>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
@@ -149,6 +126,8 @@
             android:layout_marginLeft="@dimen/list_toolbar_side_margin"
             android:layout_marginRight="@dimen/list_toolbar_side_margin"
             android:theme="@style/AppTheme.AppBarOverlay"/>
+
+        </FrameLayout>
 
     </android.support.design.widget.AppBarLayout>
 
