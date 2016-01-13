@@ -7,10 +7,18 @@ android {
 
     defaultConfig {
         applicationId "com.davicaetano.runningwithmusic"
-        minSdkVersion 15
+        minSdkVersion 17
         targetSdkVersion 22
         versionCode 1
         versionName "1.0"
+    }
+    signingConfigs {
+        release {
+            storeFile file("release.keystore")
+            storePassword "rwm0423"
+            keyAlias "RwmReleaseKey"
+            keyPassword "rwm0502"
+        }
     }
     buildTypes {
         release {

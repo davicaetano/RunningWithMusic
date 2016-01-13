@@ -43,7 +43,11 @@ public class NotificationAPIImpl implements  NotificationAPI {
             Notification notification = mBuilder.build();
             RemoteViews remoteViews = new RemoteViews(context.getPackageName(),R.layout.notification);
             remoteViews.setTextViewText(R.id.list_item_song_song_name, playerService.getTrackName());
+            remoteViews.setString(R.id.list_item_song_song_name, "setContentDescription", playerService.getTrackName());
+
             remoteViews.setTextViewText(R.id.list_item_song_artist_name, playerService.getArtistName());
+            remoteViews.setString(R.id.list_item_song_artist_name, "setContentDescription", playerService.getArtistName());
+
             remoteViews.setImageViewResource(R.id.list_item_song_image, R.drawable.icon);
 
             Intent intent = new Intent(context, PlayerActivity.class);
@@ -53,6 +57,8 @@ public class NotificationAPIImpl implements  NotificationAPI {
             remoteViews.setOnClickPendingIntent(R.id.layout_notification, pendingIntent);
 
             remoteViews.setInt(R.id.button1, "setBackgroundResource", android.R.drawable.ic_media_previous);
+            remoteViews.setString(R.id.button1, "setContentDescription", context.getString(R.string.previous));
+
             Intent intent1 = new Intent(context,PlayerService.class);
             intent1.setAction(PlayerAPIImpl.PREV);
             PendingIntent pendingIntent1 = PendingIntent.getService(context, 1, intent1, PendingIntent.FLAG_UPDATE_CURRENT);
@@ -60,8 +66,10 @@ public class NotificationAPIImpl implements  NotificationAPI {
 
             if(playerService.isPlaying()) {
                 remoteViews.setInt(R.id.button2, "setBackgroundResource", android.R.drawable.ic_media_pause);
+                remoteViews.setString(R.id.button2, "setContentDescription", context.getString(R.string.pause));
             }else{
                 remoteViews.setInt(R.id.button2, "setBackgroundResource", android.R.drawable.ic_media_play);
+                remoteViews.setString(R.id.button2, "setContentDescription", context.getString(R.string.play));
             }
             Intent intent2 = new Intent(context,PlayerService.class);
             intent2.setAction(PlayerAPIImpl.PLAY);
@@ -69,6 +77,8 @@ public class NotificationAPIImpl implements  NotificationAPI {
             remoteViews.setOnClickPendingIntent(R.id.button2, pendingIntent2);
 
             remoteViews.setInt(R.id.button3, "setBackgroundResource", android.R.drawable.ic_media_next);
+            remoteViews.setString(R.id.button3, "setContentDescription", context.getString(R.string.next));
+
             Intent intent3 = new Intent(context,PlayerService.class);
             intent3.setAction(PlayerAPIImpl.NEXT);
 

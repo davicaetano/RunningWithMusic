@@ -18,19 +18,27 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/date"/>
+                android:text="@string/date"
+                android:contentDescription="@string/date"
+                />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/duration"/>
+                android:text="@string/duration"
+                android:contentDescription="@string/duration"
+                />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/space"/>
+                android:text="@string/space"
+                android:contentDescription="@string/space"
+                />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/speed"/>
+                android:text="@string/speed"
+                android:contentDescription="@string/speed"
+                />
         </LinearLayout>
         <LinearLayout
             android:layout_width="0dp"

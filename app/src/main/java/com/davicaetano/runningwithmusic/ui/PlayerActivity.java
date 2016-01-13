@@ -144,40 +144,50 @@ public class PlayerActivity extends BaseActivity implements PlayerView, OnMapRea
     @Override
     public void setArtist(String artist) {
         txtARTIST_NAME.setText(artist);
+        txtARTIST_NAME.setContentDescription(artist);
     }
 
     @Override
     public void setAlbum(String album) {
         txtALBUM_NAME.setText(album);
+        txtALBUM_NAME.setContentDescription(album);
     }
 
     @Override
     public void setSong(String song) {
         txtTRACK_NAME.setText(song);
+        txtTRACK_NAME.setContentDescription(song);
     }
 
     @Override
     public void setPlayButton(boolean play) {
         if(!play){
             buttonPlay.setBackgroundResource(android.R.drawable.ic_media_play);
+            buttonPlay.setContentDescription(getString(R.string.play));
         }else{
             buttonPlay.setBackgroundResource(android.R.drawable.ic_media_pause);
+            buttonPlay.setContentDescription(getString(R.string.pause));
+
         }
     }
 
     @Override
     public void setTime1(String time1) {
         limit1.setText(time1);
+        limit1.setContentDescription(time1.replace(":", getString(R.string.minutes)) + getString(R.string.seconds));
     }
 
     @Override
     public void setTime2(String time2) {
         limit2.setText(time2);
+        limit2.setContentDescription(time2.replace(":", getString(R.string.minutes)) + getString(R.string.seconds));
+
     }
 
     @Override
     public void setSeekToMax(int seekToTotal) {
         seekBar.setMax(seekToTotal);
+        seekBar.setContentDescription(limit1.getContentDescription());
     }
 
     @Override

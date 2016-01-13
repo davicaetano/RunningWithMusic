@@ -268,11 +268,11 @@ public class PlayerService extends Service {
         return false;
     }
 
-    public CharSequence getTrackName() {
+    public String getTrackName() {
         return cursor.getString(cursor.getColumnIndex(RWMContract.Songs.COLUMN_SONG_NAME));
     }
 
-    public CharSequence getArtistName() {
+    public String getArtistName() {
         return cursor.getString(cursor.getColumnIndex(RWMContract.Songs.COLUMN_ARTIST));
     }
 
